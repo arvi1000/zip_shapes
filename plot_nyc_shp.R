@@ -48,4 +48,8 @@ theme_nada <- function() {
 ggplot(nyc_plot, aes(x=long, y=lat, order=order, group=group)) +
   geom_polygon(aes(fill=borough)) +
   coord_map() +
-  theme_nada()
+  theme_nada() +
+  annotate(geom='text', 
+           x=median(nyc_plot$lon), y=min(nyc_plot$lat),
+           size=4, color='grey',
+           label='github.com/arvi1000/zip_shapes')
