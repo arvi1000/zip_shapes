@@ -9,11 +9,11 @@ shp_dir <- 'shapefiles/'
 if (!any(grepl('shp', list.files(shp_dir)))) {
   # web target
   web_dir <- 'http://www2.census.gov/geo/tiger/GENZ2013/'
-  url <- paste0(web_dir, web_file)
+  url <- paste0(web_dir, zip_file)
   
   # download
   dir.create(zip_dir)
-  local_zip_file <- paste0(zip_dir, web_file)
+  local_zip_file <- paste0(zip_dir, zip_file)
   download.file(url, destfile=local_zip_file)
   
   # unzip
